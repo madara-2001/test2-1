@@ -122,7 +122,7 @@ imageio.mimsave(buffer, pics, duration=0.01, format='gif')
 gif = imageio.mimread(buffer)
 buffer.close()
 buffer = io.BytesIO()
-imageio.mimsave(buffer, gif, fps=10)
+imageio.mimsave(buffer, gif, fps=10,format='gif')
 gif = imageio.mimread(buffer)
 buffer.close()
 
