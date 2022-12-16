@@ -123,12 +123,12 @@ gif = imageio.mimread(buffer)
 buffer.close()
 buffer = io.BytesIO()
 imageio.mimsave(buffer, gif, fps=10,format='gif')
-gif = imageio.mimread(buffer)
-buffer.close()
+#gif = imageio.mimread(buffer)
 
 
 end_time = time.time()  # 程序结束时间
 run_time = end_time - start_time  # 程序的运行时间，单位为秒
 print(run_time)
 
-st.markdown(gif)
+st.markdown(buffer)
+buffer.close()
