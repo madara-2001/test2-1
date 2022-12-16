@@ -27,9 +27,9 @@ with st.sidebar:
         height_temp = int(max(length_temp * random.uniform(0.3, 0.4), 50))
     else:
         # 栅格大小为0.05m
-        length_temp = st.slider("长", 5.0, 15.0) * 20
-        width_temp = length_temp / st.slider("长宽比", 1.0, 1.4) * 20
-        height_temp = st.slider("高", 2.5, 5.0) * 20
+        length_temp = int(st.slider("长", 5.0, 15.0) * 20)
+        width_temp = int(length_temp / st.slider("长宽比", 1.0, 1.4) * 20)
+        height_temp = int(st.slider("高", 2.5, 5.0) * 20)
     if st.button("确认"):
         length=length_temp
         width=width_temp
