@@ -121,12 +121,24 @@ buffer = io.BytesIO()
 imageio.mimsave(buffer, pics, duration=0.01, format='gif')
 gif = imageio.mimread(buffer)
 buffer.close()
-a=random.random()
-imageio.mimsave('%f.gif'%a, gif, fps=10,format='gif')
+
+buffer = io.BytesIO()
+imageio.mimsave(buffer, gif, fps=10,format='gif')
+gif=imageio.mimread(buffer)
+buffer.close()
 
 end_time = time.time()  # 程序结束时间
 run_time = end_time - start_time  # 程序的运行时间，单位为秒
 print(run_time)
 
-st.markdown('%f.gif'%a)
+
+file_ = open(buffer, "rb")
+contents = file_.read()
+data_url = base64.b64encode(contents).decode("utf-8")
+file_.close()
+
+st.markdown(
+    f'< img src="data:image/gif;base64,{data_url}" alt="gif">',
+    unsafe_allow_html=True,
+)
 
