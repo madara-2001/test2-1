@@ -122,9 +122,9 @@ imageio.mimsave(buffer, pics, duration=0.01, format='gif')
 gif = imageio.mimread(buffer)
 buffer.close()
 buffer = io.BytesIO()
-imageio.mimsave(buffer, gif, fps=10,format='gif')
+gif=imageio.mimsave(buffer, gif, fps=10,format='gif')
 #gif = imageio.mimread(buffer)
-gif=PIL.Image.open(buffer)
+#gif=PIL.Image.open(buffer)
 buffer.close()
 
 end_time = time.time()  # 程序结束时间
