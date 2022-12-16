@@ -23,12 +23,12 @@ with st.sidebar:
     st.text("请输入房间尺寸\n")
     if st.button("随机生成房间尺寸"):
         length_temp = random.randrange(100, 300)
-        width_temp = int(length * random.uniform(0.7, 1))
-        height_temp = int(max(length * random.uniform(0.3, 0.4), 50))
+        width_temp = int(length_temp * random.uniform(0.7, 1))
+        height_temp = int(max(length_temp * random.uniform(0.3, 0.4), 50))
     else:
         # 栅格大小为0.05m
         length_temp = st.slider("长", 5.0, 15.0) * 20
-        width_temp = length / st.slider("长宽比", 1.0, 1.4) * 20
+        width_temp = length_temp / st.slider("长宽比", 1.0, 1.4) * 20
         height_temp = st.slider("高", 2.5, 5.0) * 20
     if st.button("确认"):
         length=length_temp
