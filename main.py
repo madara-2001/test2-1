@@ -33,7 +33,7 @@ with st.sidebar:
     if st.button("确认"):
         length=length_temp
         width=width_temp
-        height=heighth_temp
+        height=height_temp
 
 # 制作gif图
 
